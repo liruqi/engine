@@ -184,7 +184,7 @@ class User extends \ElggUser
         if (base64_decode($email, true)) {
             return $this;
         }
-        $this->email = base64_encode(Helpers\OpenSSL::encrypt($email, file_get_contents($CONFIG->encryptionKeys['email']['public'])));
+        $this->email = $email;
         return $this;
     }
 
